@@ -15,10 +15,10 @@ def get_data(filter_param=None, filter_value=None):
 
     # Construct the SQL query
     if filter_param and filter_value:
-        query = "SELECT * FROM your-table WHERE {} = %s".format(filter_param)
+        query = "SELECT * FROM your-tablename WHERE {} = %s".format(filter_param)
         params = (filter_value,)
     else:
-        query = "SELECT * FROM your-table"
+        query = "SELECT * FROM your-tablename"
         params = ()
 
     # Retrieve data from the database
