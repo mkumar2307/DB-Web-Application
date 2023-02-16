@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Database Information</title>
+    </head>
+    <body>
+        <h1>Database Information</h1>
+        <form action="/" method="get">
+            <label for="filter_param">Filter Parameter:</label>
+            <input type="text" id="filter_param" name="filter_param" value="{{ filter_param }}" />
+            <label for="filter_value">Filter Value:</label>
+            <input type="text" id="filter_value" name="filter_value" value="{{ filter_value }}" />
+            <input type="submit" value="Filter" />
+        </form>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Total_working_experience</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
