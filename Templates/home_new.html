@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Database Information</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            h1 {
+                text-align: center;
+                margin-top: 50px;
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            label {
+                margin-right: 10px;
+            }
+            input[type="text"] {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+            input[type="submit"] {
+                padding: 5px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 50px;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #4CAF50;
+                color: white;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Employee Skills</h1>
+        <form action="/" method="get">
+            <label for="filter_param">Filter Parameter:</label>
+            <select id="filter_param" name="filter_param">
+                <option value="name">Name</option>
+                <option value="total_working_experience">Total Working Experience</option>
+                <option value="Java">Java</option>
+                <option value="Java_Script">Java Script</option>
+                <option value="NodeJS">NodeJS</option>
+                <option value="AngularJS">AngularJS</option>
+                <option value="TypeScript">TypeScript</option>
+            </select>
+            <label for="filter_value">Filter Value:</label>
+            <input type="text" id="filter_value" name="filter_value" value="{{ filter_value }}" />
+            <input type="submit" value="Filter" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Total Working Experience</th>
+                    <th>Java</th>
+                    <th>JavaScript</th>
+                    <th>Node.js</th>
+                    <th>AngularJS</th>
+                    <th>TypeScript</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
