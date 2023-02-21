@@ -39,7 +39,7 @@ def home():
     data = get_data(filter_param, filter_value)
 
     # Render the homepage template with the data and filter parameters
-    return render_template("home.html", data=data, filter_param=filter_param, filter_value=filter_value)
+    return render_template("home_new.html", data=data, filter_param=filter_param, filter_value=filter_value)
 
 if __name__ == "__main__":
     app.run()
